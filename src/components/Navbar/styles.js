@@ -17,6 +17,10 @@ export default makeStyles()((theme) => ({
     tabs: {
         display: 'flex'
     },
+    link: {
+        textDecoration: 'none',
+        color: theme.palette.text.secondary
+    },
     listButton: {
         padding: '21px 20px',
         margin: 0,
