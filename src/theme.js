@@ -33,4 +33,66 @@ export const lightTheme = createTheme({
             dark: '#C6BEB2',
         }
     },
+    typography: {
+        h1: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 700,
+            fontSize: 32,
+        },
+        h2: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 700,
+            fontSize: 28,
+        },
+        h3: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 700,
+            fontSize: 24,
+        },
+        h4: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 700,
+            fontSize: 20,
+        },
+        h5: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 500,
+            fontSize: 28,
+        },
+        h6: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 500,
+            fontSize: 24,
+        },
+        subtitle1: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 500,
+            fontSize: 14,
+        },
+        subtitle2: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 400,
+            fontSize: 14,
+        },
+        body1: {
+            fontFamily: 'Cardo',
+            fontWeight: 700,
+            fontSize: 16,
+        },
+        body2: {
+            fontFamily: 'Cardo',
+            fontWeight: 400,
+            fontSize: 16,
+        },
+        caption: {
+            fontFamily: 'Cardo',
+            fontWeight: 400,
+            fontSize: 14,
+        },
+        button: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 500,
+            fontSize: 16,
+        }
+    }
 })
