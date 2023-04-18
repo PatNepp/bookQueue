@@ -1,9 +1,12 @@
-import useStyles from './styles'
+import { Navbar } from './components'
 
 function App() {
-  const {classes} = useStyles()
 
-  return <div className={classes.hello}>Hello</div>
+  return (
+  <div>
+    <Navbar />
+    Hello
+  </div>)
 }
 
 export default App
