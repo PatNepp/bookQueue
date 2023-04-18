@@ -1,6 +1,9 @@
+import useStyles from './styles'
 
 function App() {
-  return 'Hello World'
+  const {classes} = useStyles()
+
+  return <div className={classes.hello}>Hello</div>
 }
 
 export default App
