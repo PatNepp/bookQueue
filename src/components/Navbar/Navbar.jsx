@@ -4,7 +4,6 @@ import { AppBar, IconButton, List, ListItemButton, Toolbar, Typography } from '@
 import { LightMode, LightModeOutlined } from '@mui/icons-material'
 
 import useStyles from './styles'
-import { useGetBooksByTitleQuery } from '../../services/bookApi'
 
 const tabs = [
     {tab: 'Your Queue', value:'/'},
@@ -16,8 +15,6 @@ const Navbar = () => {
     const { classes } = useStyles()
     const [colorMode, setColorMode] = useState('dark')
     const location = useLocation()
-    const { data } = useGetBooksByTitleQuery('jurassic park')
-    console.log(data)
 
     const toggleColor = () => {
         setColorMode((prevMode) => prevMode === 'light' ? 'dark' : 'light')
