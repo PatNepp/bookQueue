@@ -27,7 +27,7 @@ export default makeStyles()((theme) => ({
         '&.Mui-selected': {
             color: theme.palette.secondary.light,
             borderBottom: '3px solid',
-            borderColor: theme.palette.info.main,
+            borderColor: theme.palette.info.light,
         }
     },
     lightModeIcon: {
