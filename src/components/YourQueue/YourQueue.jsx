@@ -1,15 +1,25 @@
 import React from 'react'
-import {BookCard} from '..'
-import { useGetBooksByTitleQuery } from '../../services/bookApi'
+import {BookCard, Search} from '..'
+import { useGetBooksQuery } from '../../services/bookApi'
+import { useSelector } from 'react-redux'
+import { Typography } from '@mui/material'
 
-const YourQueue = () => {
-    const {data} = useGetBooksByTitleQuery('Congo')
+const YourQueue = () => { 
+    const {searchQuery} = useSelector((state) => state.searchTitleOrAuthor)
+    console.log(searchQuery)
+    const {data} = useGetBooksQuery(searchQuery)
 
   return (
     <div>
-        {data?.items.map((item, i) => (
+        <Search />
+        {searchQuery === '' ? (
+          <Typography variant='h1'>Search for a New Book!</Typography>
+        ) : (
+          data?.items.map((item, i) => (
             <BookCard key={i} data={item} />
-        ))}
+          ))
+        )}
+        
     </div>
   )
 }
