@@ -28,7 +28,7 @@ export const lightTheme = createTheme({
             secondary: '#9F9C99',
         },
         background: {
-            default: '#575A4B',
+            default: 'pink',
             light: '#F3EDE4',
             dark: '#C6BEB2',
         }
