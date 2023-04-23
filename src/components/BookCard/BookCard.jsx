@@ -3,11 +3,11 @@ import { Card, CardActions, CardContent, CardHeader, CardMedia, Box, Typography,
 import React from 'react'
 
 const BookCard = ({ data }) => {
-    
     const { volumeInfo } = data
+    console.log(volumeInfo)
 
   return (
-    <Card >
+    <Card>
         <CardHeader 
             title={
                 <Typography variant='h3'>
@@ -16,7 +16,7 @@ const BookCard = ({ data }) => {
             }
             subheader={
                 <Typography variant='subtitle1'>
-                    {volumeInfo.authors[0]} | {volumeInfo?.publishedDate.slice(0, 4)}
+                    {volumeInfo?.authors[0]} | {volumeInfo?.publishedDate.slice(0, 4)}
                 </Typography>
             }
             action={
@@ -27,12 +27,12 @@ const BookCard = ({ data }) => {
         />
         <Divider />
         <Box display='flex'>
-        {volumeInfo.imageLinks && (
-            <img src={volumeInfo?.imageLinks.thumbnail} alt="" />
+        {volumeInfo?.imageLinks && (
+            <img src={volumeInfo?.imageLinks?.thumbnail} alt="" />
         )}
             <CardContent>
                 <Typography variant="body1">
-                    {volumeInfo.description}
+                    {volumeInfo?.description}
                 </Typography>   
             </CardContent>
         </Box>

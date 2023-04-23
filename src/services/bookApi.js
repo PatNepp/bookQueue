@@ -7,10 +7,10 @@ export const bookApi = createApi({
     reducerPath: 'bookApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://www.googleapis.com/books/v1'}),
     endpoints: (builder) => ({
-        getBooksByTitle: builder.query({
-            query: (search) => `volumes?q=${search}&key=${apiKey}`
+        getBooks: builder.query({
+            query: (searchQuery) => `volumes?q=${searchQuery}&key=${apiKey}`
         })
     })
 })
 
-export const { useGetBooksByTitleQuery } = bookApi
+export const { useGetBooksQuery } = bookApi
