@@ -1,27 +1,26 @@
 import React from 'react'
-import {BookCard, Search} from '..'
-import { useGetBooksQuery } from '../../services/bookApi'
 import { useSelector } from 'react-redux'
 import { Typography } from '@mui/material'
 
-const YourQueue = () => { 
+import {BookCard, SingleSearchBar } from '..'
+import { useGetBooksQuery } from '../../services/bookApi'
+
+const AddBook = () => { 
     const {searchQuery} = useSelector((state) => state.searchTitleOrAuthor)
-    console.log(searchQuery)
     const {data} = useGetBooksQuery(searchQuery)
 
   return (
     <div>
-        <Search />
+        <SingleSearchBar />
         {searchQuery === '' ? (
           <Typography variant='h1'>Search for a New Book!</Typography>
         ) : (
           data?.items.map((item, i) => (
             <BookCard key={i} data={item} />
           ))
-        )}
-        
+        )}     
     </div>
   )
 }
 
-export default YourQueue
+export default AddBook

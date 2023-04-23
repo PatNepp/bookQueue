@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 
-import { Navbar, YourQueue } from './components'
+import { Navbar, AddBook } from './components'
 
 function App() {
 
   return (
     <Routes>
       <Route element={<Navbar />}>
-        <Route path='/' element={<YourQueue />}/>
-        <Route path='/add' element='Add a Book'/>
+        <Route path='/' element='Your Queue'/>
+        <Route path='/add' element={<AddBook />}/>
         <Route path='/completed' element='Completed'/>
       </Route>
     </Routes>
