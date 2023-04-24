@@ -1,10 +1,21 @@
-import { Add } from '@mui/icons-material'
-import { Card, CardActions, CardContent, CardHeader, CardMedia, Box, Typography, Button, Divider } from '@mui/material'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { Add } from '@mui/icons-material'
+import { Card, CardContent, CardHeader, Box, Typography, Button, Divider } from '@mui/material'
+
+import { addBook } from '../../features/bookActions'
 
 const BookCard = ({ data }) => {
     const { volumeInfo } = data
-    console.log(volumeInfo)
+    const dispatch = useDispatch()
+    console.log('bookcard', volumeInfo)
+    const arr = JSON.parse(localStorage.getItem('queue'))
+    console.log(arr)
+
+    const addBookToQueue = () => {
+        dispatch(addBook(volumeInfo))
+        
+    }
 
   return (
     <Card>
@@ -20,7 +31,9 @@ const BookCard = ({ data }) => {
                 </Typography>
             }
             action={
-                <Button>
+                <Button
+                    onClick={addBookToQueue}
+                >
                     <Add /><Typography variant='button'>Add</Typography>
                 </Button>
             }
