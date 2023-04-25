@@ -7,7 +7,7 @@ import { useGetBooksQuery } from '../../services/bookApi'
 
 const AddBook = () => { 
     const {searchQuery} = useSelector((state) => state.searchTitleOrAuthor)
-    const {data} = useGetBooksQuery(searchQuery)
+    const { data } = useGetBooksQuery(searchQuery)
 
   return (
     <div>
@@ -16,7 +16,7 @@ const AddBook = () => {
           <Typography variant='h1'>Search for a New Book!</Typography>
         ) : (
           data?.items.map((item, i) => (
-            <BookCard key={i} data={item} />
+            <BookCard key={i} data={item.volumeInfo} />
           ))
         )}     
     </div>
