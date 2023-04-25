@@ -11,7 +11,7 @@ export const bookActions = createSlice({
             state.searchQuery = action.payload;
         },
         addBook: (state, action) => {
-            state.bookQueue = [action.payload, ...state.bookQueue ]
+            state.bookQueue = [ ...state.bookQueue, action.payload ]
 
             localStorage.setItem('queue', JSON.stringify(state.bookQueue))
         },

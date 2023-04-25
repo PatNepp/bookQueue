@@ -6,15 +6,10 @@ import { Card, CardContent, CardHeader, Box, Typography, Button, Divider } from 
 import { addBook } from '../../features/bookActions'
 
 const BookCard = ({ data }) => {
-    const { volumeInfo } = data
     const dispatch = useDispatch()
-    console.log('bookcard', volumeInfo)
-    const arr = JSON.parse(localStorage.getItem('queue'))
-    console.log(arr)
 
     const addBookToQueue = () => {
-        dispatch(addBook(volumeInfo))
-        
+        dispatch(addBook(data)) 
     }
 
   return (
@@ -22,12 +17,12 @@ const BookCard = ({ data }) => {
         <CardHeader 
             title={
                 <Typography variant='h3'>
-                    {volumeInfo?.title}
+                    {data?.title}
                 </Typography>
             }
             subheader={
                 <Typography variant='subtitle1'>
-                    {volumeInfo?.authors[0]} | {volumeInfo?.publishedDate.slice(0, 4)}
+                    {data?.authors[0]} | {data?.publishedDate && data.publishedDate.slice(0, 4)}
                 </Typography>
             }
             action={
@@ -40,12 +35,12 @@ const BookCard = ({ data }) => {
         />
         <Divider />
         <Box display='flex'>
-        {volumeInfo?.imageLinks && (
-            <img src={volumeInfo?.imageLinks?.thumbnail} alt="" />
+        {data?.imageLinks && (
+            <img src={data?.imageLinks?.thumbnail} alt="" />
         )}
             <CardContent>
                 <Typography variant="body1">
-                    {volumeInfo?.description}
+                    {data?.description}
                 </Typography>   
             </CardContent>
         </Box>
