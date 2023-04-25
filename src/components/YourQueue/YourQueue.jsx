@@ -1,9 +1,8 @@
 import React from 'react'
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 
 import useStyles from './styles'
 import BookCard from '../BookCard/BookCard'
-
 
 const YourQueue = () => {
     const { classes } = useStyles()
@@ -11,7 +10,7 @@ const YourQueue = () => {
     console.log(bookQueue)
 
   return (
-    <div>
+    <Grid container className={classes.bookQueueContainer}>
         {
             bookQueue ? (
                 bookQueue.map((book, i) => (
@@ -21,7 +20,7 @@ const YourQueue = () => {
                 <Typography variant='h2'>Add to your Queue!</Typography>
             )
         }
-    </div>
+    </Grid>
   )
 }
 
